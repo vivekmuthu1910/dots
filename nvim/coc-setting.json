@@ -1,0 +1,17 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "markdown",
+    "python",
+    "rust",
+    "scss",
+    "typescript",
+    "typescriptreact"
+  ],
+  "python.jediEnabled": false,
+  "typescript.suggest.autoImports": true
+}
