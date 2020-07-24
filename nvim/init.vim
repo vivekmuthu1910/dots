@@ -8,7 +8,7 @@
 "    ░░░░░    ░░░░░░░░░░   ░░░░░░░░░  ░░░░░   ░░░░░ ░░░░░    ░░░░░    ░░░░░░░    ░░░░░ ░░░░░░░░░░   
 "
 " Filename:   init.vim
-" Github:     https://github.com/vivekmuthu1910/dots
+" Github:     https://github.com/vivekmuthu1910/dots/
 " Maintainer: Vivekanandan Muthaiyan (vivekmuthu1910@gmail.com) 
                                                                                                   
                                                                                                   
@@ -16,16 +16,16 @@
 " Plugins {{{
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/jsonc.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'preservim/nerdcommenter'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -34,6 +34,7 @@ call plug#end()
 " Vim-Airline Setups {{{
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='papercolor'
 
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -292,7 +293,7 @@ nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 "   <C-o>          - Open currently selected file in any mode
 "   <C-t>         - Open currently selected file in a new tab
 "   <C-v>         - Open currently selected file a vertical split
-"   <C-h>         - Open currently selected file in a horizontal split
+"   <C-x>         - Open currently selected file in a horizontal split
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   imap <silent><buffer> <CR>
@@ -307,7 +308,7 @@ function! s:denite_filter_my_settings() abort
   \ denite#do_map('do_action', 'tabopen')
   inoremap <silent><buffer><expr> <C-v>
   \ denite#do_map('do_action', 'vsplit')
-  inoremap <silent><buffer><expr> <C-h>
+  inoremap <silent><buffer><expr> <C-x>
   \ denite#do_map('do_action', 'split')
 endfunction
 
@@ -319,7 +320,7 @@ endfunction
 "   <C-o> or i  - Switch to insert mode inside of filter prompt
 "   <C-t>       - Open currently selected file in a new tab
 "   <C-v>       - Open currently selected file a vertical split
-"   <C-h>       - Open currently selected file in a horizontal split
+"   <C-x>       - Open currently selected file in a horizontal split
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
@@ -340,7 +341,7 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'tabopen')
   nnoremap <silent><buffer><expr> <C-v>
   \ denite#do_map('do_action', 'vsplit')
-  nnoremap <silent><buffer><expr> <C-h>
+  nnoremap <silent><buffer><expr> <C-x>
   \ denite#do_map('do_action', 'split')
 endfunction
 
@@ -393,12 +394,12 @@ set noswapfile
 set nobackup
 set incsearch
 
-colorscheme gruvbox
-set background=dark
+set background=light
+colorscheme PaperColor
 
-set colorcolumn=100
-highlight ColorColumn ctermbg=239 guibg=9
-
+" set colorcolumn=100
+highlight ColorColumn ctermbg=252 guibg=252 ctermfg=235
+call matchadd('ColorColumn', '\%101v', 100) 
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
