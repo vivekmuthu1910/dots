@@ -121,7 +121,7 @@ fi
 
 eval "$(starship init zsh)"
 
-export DENO_INSTALL="/home/vivek/.deno"
+export DENO_INSTALL="$HOME/.deno"
 if [ -d "$DENO_INSTALL/bin" ] ; then
 	export PATH="$DENO_INSTALL/bin:$PATH"
 fi
