@@ -215,6 +215,7 @@ try
 				\'coc-flutter', 
 				\'coc-html', 
 				\'coc-json', 
+				\'coc-prettier', 
 				\'coc-python', 
 				\'coc-rls', 
 				\'coc-tsserver' 
