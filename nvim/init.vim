@@ -215,8 +215,9 @@ try
 				\'coc-flutter', 
 				\'coc-html', 
 				\'coc-json', 
-				\'coc-prettier', 
+				\'coc-julia',
 				\'coc-python', 
+				\'coc-prettier',
 				\'coc-rls', 
 				\'coc-tsserver' 
 				\]
@@ -456,5 +457,13 @@ imap <cap> <esc>
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " }}}
+
+" My Commands {{{ 
+
+" Change working directory to current file's directory
+command! -nargs=0 Cdc :cd %:p:h
+command! -nargs=0 Lcdc :lcd %:p:h
+
+"}}}
 
 " vim:foldmethod=marker:foldlevel=0
